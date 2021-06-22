@@ -381,7 +381,7 @@ class EvoCluster:
 
         if(algo =="WBH"):
             print("hi")
-            #x = cwbh.WBH(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)
+            x = cwbh.WBH(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)
         if(algo =="SSA"):
             x = cssa.SSA(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
         if(algo =="PSO"):
