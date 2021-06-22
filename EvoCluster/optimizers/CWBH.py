@@ -138,6 +138,7 @@ def WBH(objf,lb,ub,dim,SearchAgents_no,Max_iter,k,points, metric):
 
           #----------WHALE PART-------------------------#
           Positions=best
+          S=best  
             
           Positions[i,:]=numpy.clip(Positions[i,:], lb, ub)
    
