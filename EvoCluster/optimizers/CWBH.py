@@ -122,7 +122,8 @@ def WBH(objf,lb,ub,dim,SearchAgents_no,Max_iter,k,points, metric):
           LabelsPrednew = labelsPredValues
           
           # Update if the solution improves
-          if ((Fnew != numpy.inf) and (Fnew<=Fitness[i]) and (random.random()<A) ):
+          #if ((Fnew != numpy.inf) and (Fnew<=Fitness[i]) and (random.random()<A) ):
+          if ((Fnew != numpy.inf) and (Fnew<=Fitness[i]) ):
                 Sol[i,:]=numpy.copy(S[i,:])
                 Fitness[i]=Fnew
                 labelsPred[i,:]=LabelsPrednew
