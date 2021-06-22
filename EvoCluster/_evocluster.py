@@ -18,6 +18,7 @@ from .optimizers import CWOA as cwoa
 from .optimizers import CMVO as cmvo
 from .optimizers import CMFO as cmfo
 from .optimizers import CCS as ccs
+from .optimizers import CWBH as cwbh
 
 from . import _objectives as objectives
 from . import _measures as measures
@@ -378,6 +379,9 @@ class EvoCluster:
         lb = 0
         ub = 1
 
+        if(algo =="WBH"):
+            print("hi")
+            #x = cwbh.WBH(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)
         if(algo =="SSA"):
             x = cssa.SSA(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
         if(algo =="PSO"):
@@ -389,7 +393,8 @@ class EvoCluster:
         if(algo =="FFA"):
             x = cffa.FFA(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
         if(algo =="GWO"):
-            x = cgwo.GWO(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
+            print("Im in")
+            #x = cgwo.GWO(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
         if(algo =="WOA"):
             x = cwoa.WOA(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
         if(algo =="MVO"):
@@ -397,5 +402,7 @@ class EvoCluster:
         if(algo =="MFO"):
             x = cmfo.MFO(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
         if(algo =="CS"):
-            x = ccs.CS(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
+            x = ccs.CS(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)
+        
+                
         return x
