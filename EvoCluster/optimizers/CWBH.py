@@ -131,7 +131,8 @@ def WBH(objf,lb,ub,dim,SearchAgents_no,Max_iter,k,points, metric):
     
           # Update the current best solution
           if Fnew != numpy.inf and Fnew<=fmin:
-                best=numpy.copy(S[i,:])
+                I=numpy.argmin(Fitness)
+                best=numpy.copy(S[I,:])
                 fmin=Fnew
                 bestLabelsPred=LabelsPrednew
 
