@@ -380,7 +380,7 @@ class EvoCluster:
         ub = 1
 
         if(algo =="WBH"):
-            print("hi")
+            print(cwbh)
             x = cwbh.WBH(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)
         if(algo =="SSA"):
             x = cssa.SSA(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
@@ -394,7 +394,7 @@ class EvoCluster:
             x = cffa.FFA(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
         if(algo =="GWO"):
             print("Im in")
-            #x = cgwo.GWO(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
+            x = cgwo.GWO(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
         if(algo =="WOA"):
             x = cwoa.WOA(getattr(objectives, objective_name),lb,ub,k * f,popSize,Iter, k, points, metric)        
         if(algo =="MVO"):
