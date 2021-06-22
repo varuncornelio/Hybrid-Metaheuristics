@@ -179,7 +179,8 @@ def WBH(objf,lb,ub,dim,SearchAgents_no,Max_iter,k,points, metric):
             if fitness<Leader_score: # Change this to > for maximization problem
                 Leader_score=fitness; # Update alpha
                 #Leader_pos=Positions[i,:].copy() # copy current whale position into the leader position
-                Leader_pos=best[i,:].copy()
+                #Leader_pos=best[i,:].copy()
+                Leader_pos=some_error
                 Leader_labels=labelsPrednew[i,:].copy() # copy current whale position into the leader position
             
             
