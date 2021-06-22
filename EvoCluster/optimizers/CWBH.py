@@ -111,7 +111,7 @@ def WBH(objf,lb,ub,dim,SearchAgents_no,Max_iter,k,points, metric):
           
     
           # Evaluate new solutions
-          startpts = numpy.reshape(Positions[i,:], (k,(int)(dim/k)))
+          startpts = numpy.reshape(Sol[i,:], (k,(int)(dim/k)))
 
           if objf.__name__ == 'SSE' or objf.__name__ == 'SC' or objf.__name__ == 'DI':
               fitnessValue, labelsPredValues=objf(startpts, points, k, metric) 
@@ -135,6 +135,11 @@ def WBH(objf,lb,ub,dim,SearchAgents_no,Max_iter,k,points, metric):
                 best=numpy.copy(S[I,:])
                 fmin=Fnew
                 bestLabelsPred=LabelsPrednew
+                
+          Sol[i,-1]=best[-1]
+          Positions[i,-1]=best[-1]
+          
+                
 
                 '''
           #----------WHALE PART-------------------------#
@@ -178,9 +183,8 @@ def WBH(objf,lb,ub,dim,SearchAgents_no,Max_iter,k,points, metric):
             # Update the leader
             if fitness<Leader_score: # Change this to > for maximization problem
                 Leader_score=fitness; # Update alpha
-                #Leader_pos=Positions[i,:].copy() # copy current whale position into the leader position
+                Leader_pos=best[i,-1].copy() # copy current whale position into the leader position
                 #Leader_pos=best[i,:].copy()
-                Leader_pos=some_error
                 Leader_labels=labelsPrednew[i,:].copy() # copy current whale position into the leader position
             
             
