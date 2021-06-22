@@ -111,7 +111,7 @@ def WBH(objf,lb,ub,dim,SearchAgents_no,Max_iter,k,points, metric):
           
     
           # Evaluate new solutions
-          startpts = numpy.reshape(S[i,:], (k,(int)(dim/k)))
+          startpts = numpy.reshape(Positions[i,:], (k,(int)(dim/k)))
 
           if objf.__name__ == 'SSE' or objf.__name__ == 'SC' or objf.__name__ == 'DI':
               fitnessValue, labelsPredValues=objf(startpts, points, k, metric) 
