@@ -27,11 +27,11 @@ def WBH(objf,lb,ub,dim,SearchAgents_no,Max_iter,k,points, metric):
     
     N_gen=Max_iter  # Number of generations
     
-    A=0.5;      # Loudness  (constant or decreasing)
-    r=0.5;      # Pulse rate (constant or decreasing)
+    A=0.9;      # Loudness  (constant or decreasing)
+    r=0.9;      # Pulse rate (constant or decreasing)
     
     Qmin=0         # Frequency minimum
-    Qmax=2         # Frequency maximum
+    Qmax=10         # Frequency maximum
     
     
     d=dim           # Number of dimensions 
